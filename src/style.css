@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background: #0c0c0c;
+  color: #e8e8e8;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.wrap {
+  width: min(70vh, 100%);
+  max-width: 540px;
+}
+
+.canvas-wrap {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #000;
+  border: 1px solid #1d1d1d;
+}
+
+canvas#scene {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* yukleme perdesi */
+.dropzone {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 24px;
+  text-align: center;
+  background: rgba(12, 12, 12, 0.5);
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.dropzone.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.dropzone.dragover {
+  background: rgba(12, 12, 12, 0.72);
+}
+
+.hook {
+  margin: 0;
+  font-size: clamp(16px, 4.4vw, 22px);
+  font-weight: 500;
+  color: #fff;
+}
+
+.btn {
+  background: transparent;
+  color: #e8e8e8;
+  border: 1px solid #3a3a3a;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.btn:hover {
+  border-color: #6a6a6a;
+}
+
+/* reveal sozu */
+.quote {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 32px 22px 20px;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.85));
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+
+.quote.show {
+  opacity: 1;
+}
+
+.quote blockquote {
+  margin: 0 0 6px;
+  font-size: clamp(14px, 3.4vw, 18px);
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.quote figcaption {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.rec-dot {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 11px;
+  color: #fff;
+  background: #c0392b;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+/* alt kontroller — sade metin baglantilari */
+.controls {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.link {
+  background: none;
+  border: none;
+  color: #8f8f8f;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 4px 2px;
+  transition: color 0.2s ease;
+}
+
+.link:hover:not(:disabled) {
+  color: #fff;
+}
+
+.link.recording {
+  color: #e74c3c;
+}
+
+.link:disabled {
+  opacity: 0.32;
+  cursor: default;
+}
+
+.status {
+  text-align: center;
+  color: #6f6f6f;
+  font-size: 12px;
+  min-height: 16px;
+  margin: 10px 0 0;
+}

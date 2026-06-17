@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fotoğrafını daha yakışıklı hale getir</title>
+  </head>
+  <body>
+    <main class="wrap">
+      <div class="canvas-wrap">
+        <canvas id="scene"></canvas>
+
+        <div id="dropzone" class="dropzone">
+          <p class="hook">fotoğrafını daha yakışıklı hale getir</p>
+          <button id="pickBtn" class="btn">fotoğraf yükle</button>
+        </div>
+
+        <figure id="quote" class="quote">
+          <blockquote id="quoteText"></blockquote>
+          <figcaption>— Mustafa Kemal Atatürk</figcaption>
+        </figure>
+
+        <div id="recDot" class="rec-dot" hidden>● rec</div>
+      </div>
+
+      <div class="controls">
+        <button id="replayBtn" class="link" disabled>tekrar</button>
+        <button id="shuffleBtn" class="link" disabled>başka</button>
+        <button id="newImgBtn" class="link" disabled>yeni fotoğraf</button>
+        <button id="recordBtn" class="link" disabled>kaydet</button>
+      </div>
+
+      <p id="status" class="status"></p>
+    </main>
+
+    <input id="fileInput" type="file" accept="image/*" hidden />
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
